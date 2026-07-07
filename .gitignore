@@ -11,3 +11,4 @@ venv/
 # On l'ignore en local, mais le workflow cloud le pousse temporairement.
 output/caption.txt
 output/meta.json
+.claude/
