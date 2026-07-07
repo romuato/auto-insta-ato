@@ -1,0 +1,4 @@
+# Dépendances Python du projet "Auto Insta A T O"
+openai>=1.30.0
+requests>=2.31.0
+python-dotenv>=1.0.0

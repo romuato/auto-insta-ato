@@ -1,0 +1,13 @@
+# Secrets : ne jamais publier
+.env
+
+# Environnement Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Le dossier output garde la derniere image generee.
+# On l'ignore en local, mais le workflow cloud le pousse temporairement.
+output/caption.txt
+output/meta.json

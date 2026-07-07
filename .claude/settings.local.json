@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(grep -E \"^\\\\.env$\")",
+      "mcp__claude-in-chrome__tabs_context_mcp",
+      "mcp__claude-in-chrome__browser_batch",
+      "mcp__claude-in-chrome__computer",
+      "mcp__claude-in-chrome__read_page",
+      "mcp__claude-in-chrome__navigate",
+      "mcp__claude-in-chrome__tabs_create_mcp",
+      "Bash(python -m py_compile publish.py)",
+      "Bash(python -c ' *)",
+      "Bash(python main.py)",
+      "Bash(pip install *)",
+      "Bash(python publish.py)",
+      "PowerShell(Invoke-Item \"C:\\\\Users\\\\sabir\\\\Desktop\\\\nouveau projet\\\\logiciel\\\\auto insta A T O\\\\output\\\\image.png\")",
+      "Bash(git --version)",
+      "Bash(gh --version)",
+      "Bash(gh auth *)"
+    ]
+  }
+}

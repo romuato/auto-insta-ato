@@ -1,0 +1,62 @@
+name: Publication automatique Instagram A T O
+
+# ---------------------------------------------------------------------------
+# Quand ca se declenche.
+# Les heures sont en UTC. La France est en UTC+2 l'ete / UTC+1 l'hiver.
+#   07:00 UTC ~= 09:00 (ete) / 08:00 (hiver)  -> post du matin
+#   16:00 UTC ~= 18:00 (ete) / 17:00 (hiver)  -> post du soir
+# Pour 1 SEUL post/jour : supprimez la 2e ligne de "cron".
+# ---------------------------------------------------------------------------
+on:
+  schedule:
+    - cron: "0 7 * * *"
+    - cron: "0 16 * * *"
+  workflow_dispatch:        # permet aussi de lancer a la main depuis l'onglet Actions
+
+permissions:
+  contents: write           # autorise le push de l'image dans le depot
+
+jobs:
+  publier:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Recuperer le code
+        uses: actions/checkout@v4
+
+      - name: Installer Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Installer les dependances
+        run: pip install -r requirements.txt
+
+      - name: Determiner le creneau (matin=0 / soir=1)
+        id: slot
+        run: |
+          HOUR=$(date -u +%H)
+          if [ "$HOUR" -lt 12 ]; then echo "value=0" >> "$GITHUB_OUTPUT"; else echo "value=1" >> "$GITHUB_OUTPUT"; fi
+
+      - name: Generer le post (texte + image)
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          POST_SLOT: ${{ steps.slot.outputs.value }}
+        run: python generate.py
+
+      - name: Pousser l'image pour l'heberger publiquement
+        id: push
+        run: |
+          git config user.name "ato-bot"
+          git config user.email "ato-bot@users.noreply.github.com"
+          git add -f output/image.png
+          git commit -m "post auto $(date -u +%Y-%m-%dT%H:%M)" || echo "rien a committer"
+          git push
+          echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+
+      - name: Publier sur Instagram + Page Facebook
+        env:
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+          FB_PAGE_ID: ${{ secrets.FB_PAGE_ID }}
+          IMAGE_URL: "https://raw.githubusercontent.com/${{ github.repository }}/${{ steps.push.outputs.sha }}/output/image.png"
+        run: python publish.py
