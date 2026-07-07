@@ -39,8 +39,9 @@ CATEGORIES = [
             "frequent + la solution. Doit apporter de la valeur meme a qui ne devient pas client."
         ),
         "style_image": (
-            "illustration moderne et epuree sur le theme du web design / developpement, "
-            "couleurs sobres et professionnelles, style flat design minimaliste"
+            "photographie realiste d'un espace de travail moderne : ordinateur portable "
+            "ouvert sur un site web elegant, bureau lumineux, tasse de cafe, plante verte, "
+            "profondeur de champ, lumiere naturelle"
         ),
     },
     {
@@ -53,8 +54,9 @@ CATEGORIES = [
             "noms de clients reels), parle des benefices obtenus pour le client."
         ),
         "style_image": (
-            "mockup elegant d'un site web sur ecran d'ordinateur portable et smartphone, "
-            "ambiance studio, lumiere douce, rendu professionnel haut de gamme"
+            "photographie realiste haut de gamme : ecran d'ordinateur et smartphone "
+            "affichant un site web moderne et soigne, ambiance studio professionnelle, "
+            "lumiere douce, mise au point nette sur les ecrans, rendu photo authentique"
         ),
     },
     {
@@ -67,8 +69,9 @@ CATEGORIES = [
             "Reste honnete et generique, sans chiffres invente comme s'ils etaient reels."
         ),
         "style_image": (
-            "graphique de croissance stylise, courbe ascendante, theme business et reussite, "
-            "couleurs professionnelles, design moderne"
+            "photographie realiste d'une scene business : entrepreneur souriant consultant "
+            "des statistiques en hausse sur une tablette ou un ecran, interieur de commerce "
+            "ou bureau chaleureux, lumiere naturelle, photo authentique"
         ),
     },
     {
@@ -80,8 +83,9 @@ CATEGORIES = [
             "mesure) et invite a passer a l'action. Doit donner envie de contacter sans etre agressif."
         ),
         "style_image": (
-            "visuel d'appel a l'action professionnel, theme creation de site web, "
-            "design moderne et engageant, couleurs de marque sobres"
+            "photographie realiste et engageante : poignee de main professionnelle ou "
+            "rendez-vous client dans un bureau moderne, ordinateur portable avec site web "
+            "a l'ecran, ambiance confiance et professionnalisme, lumiere naturelle"
         ),
     },
     {
@@ -93,8 +97,9 @@ CATEGORIES = [
             "nouvelles technos web) et termine par une question ouverte pour faire reagir en commentaire."
         ),
         "style_image": (
-            "illustration conceptuelle sur la technologie et l'innovation, theme futuriste sobre, "
-            "style editorial moderne"
+            "photographie realiste editoriale sur la technologie : mains tapant sur un "
+            "clavier avec interface moderne a l'ecran, ou personne utilisant un smartphone, "
+            "ambiance tech contemporaine, photo de style magazine, lumiere naturelle"
         ),
     },
 ]

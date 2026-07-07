@@ -8,10 +8,12 @@ name: Publication automatique Instagram A T O
 # Pour 1 SEUL post/jour : supprimez la 2e ligne de "cron".
 # ---------------------------------------------------------------------------
 on:
-  schedule:
-    - cron: "0 7 * * *"
-    - cron: "0 16 * * *"
-  workflow_dispatch:        # permet aussi de lancer a la main depuis l'onglet Actions
+  # Publication automatique DESACTIVEE a la demande de Romuald (mode Studio manuel).
+  # Pour la reactiver : decommenter les 3 lignes ci-dessous.
+  # schedule:
+  #   - cron: "0 7 * * *"
+  #   - cron: "0 16 * * *"
+  workflow_dispatch:        # lancement manuel uniquement, depuis l'onglet Actions
 
 permissions:
   contents: write           # autorise le push de l'image dans le depot

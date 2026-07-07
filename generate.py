@@ -86,10 +86,12 @@ Redige UNE publication Instagram complete et prete a publier :
 
 def generer_image(categorie: dict) -> bytes:
     prompt = (
-        f"{categorie['style_image']}. "
-        f"Theme : {cp.MARQUE['activite']}. "
-        "Image carree pour Instagram, tres haute qualite, sans texte ni lettres, "
-        "sans logo, composition propre et professionnelle."
+        f"Photographie professionnelle photorealiste, comme prise avec un appareil "
+        f"photo reflex haut de gamme. {categorie['style_image']}. "
+        f"Theme general : {cp.MARQUE['activite']}. "
+        "Image carree pour Instagram. Aucun texte, aucune lettre, aucun logo dans "
+        "l'image. Rendu realiste et credible, PAS d'illustration, PAS de dessin, "
+        "PAS de style cartoon. Composition soignee, digne d'un magazine."
     )
     resp = client.images.generate(
         model="gpt-image-1",
