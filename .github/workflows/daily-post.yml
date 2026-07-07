@@ -58,5 +58,6 @@ jobs:
           IG_USER_ID: ${{ secrets.IG_USER_ID }}
           IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
           FB_PAGE_ID: ${{ secrets.FB_PAGE_ID }}
+          FB_PAGE_TOKEN: ${{ secrets.FB_PAGE_TOKEN }}
           IMAGE_URL: "https://raw.githubusercontent.com/${{ github.repository }}/${{ steps.push.outputs.sha }}/output/image.png"
         run: python publish.py
